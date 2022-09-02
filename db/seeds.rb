@@ -10,7 +10,7 @@ id = 555202
 # 1.times do |i|
 # response = HTTP.get("https://api.magicthegathering.io/v1/cards/" + (id).to_s).parse
 # card = response.body
-3.times do |i|
+261.times do |i|
   response = HTTP.get("https://api.magicthegathering.io/v1/cards/" + (id + i).to_s).parse
   card = Card.new(
     name: response["card"]["name"],
@@ -22,9 +22,9 @@ id = 555202
     cost: response["card"]["manaCost"],
     cmc: response["card"]["cmc"],
     colors: response["card"]["White"],
-    type: response["card"]["type"]
+    types: response["card"]["type"]
   )
-  p card
+  card.save
 end
 p 
 p 
