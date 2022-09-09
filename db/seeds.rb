@@ -21,7 +21,7 @@ id = 555202
     expansion_id: 1,
     cost: response["card"]["manaCost"],
     cmc: response["card"]["cmc"],
-    colors: response["card"]["White"],
+    colors: response["card"]["colors"],
     types: response["card"]["type"]
   )
   card.save
@@ -40,6 +40,11 @@ user = User.new(
   email: "test@test.com"
 )
 user.save
+deck = Deck.new(
+  name: nil,
+  user_id: nil,
+  description: nil
+)
 # p card
 # card = Card.new(name: response[:card])
 # p card

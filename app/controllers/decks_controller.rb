@@ -3,7 +3,7 @@ class DecksController < ApplicationController
   def create
     deck = Deck.new(
       name: "some"
-      
+
 
     )
   end
@@ -18,6 +18,7 @@ class DecksController < ApplicationController
   end
 
   def index
+    @decks = Deck.
   end
 
 end
