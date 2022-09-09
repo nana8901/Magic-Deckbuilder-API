@@ -2,13 +2,15 @@ class DecksController < ApplicationController
   
   def create
     deck = Deck.new(
-      name: "some"
-
-
+      name: "some",
+      user_id: 1
+      description: "once told me",
     )
   end
 
   def update
+    deck = Deck.find_by(id: params[:id])
+
   end
 
   def delete
@@ -18,7 +20,10 @@ class DecksController < ApplicationController
   end
 
   def index
-    @decks = Deck.
+    @decks = Deck.all
+    render json: @decks
+    p current_user
+
   end
 
 end
