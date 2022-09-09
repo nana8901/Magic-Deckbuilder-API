@@ -22,7 +22,8 @@ id = 555202
     cost: response["card"]["manaCost"],
     cmc: response["card"]["cmc"],
     colors: response["card"]["colors"],
-    types: response["card"]["type"]
+    types: response["card"]["type"],
+    image_url: response["card"]["imageUrl"]
   )
   card.save
 end
@@ -41,10 +42,17 @@ user = User.new(
 )
 user.save
 deck = Deck.new(
-  name: nil,
-  user_id: nil,
-  description: nil
+  name: "Bob's first deck",
+  user_id: "1",
+  description: "This is Bob's first deck"
 )
+deck.save
+deck = Deck.new(
+  name: "tester",
+  user_id: "2",
+  description: "This is a testing deck"
+)
+deck.save
 # p card
 # card = Card.new(name: response[:card])
 # p card
