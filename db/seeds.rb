@@ -28,6 +28,18 @@ id = 555202
 end
 p 
 p 
+user = User.new(
+  name: "bob",
+  password_digest: "password",
+  email: "bob@bob.com"
+)
+user.save
+user = User.new(
+  name: "test",
+  password_digest: "password",
+  email: "test@test.com"
+)
+user.save
 # p card
 # card = Card.new(name: response[:card])
 # p card
