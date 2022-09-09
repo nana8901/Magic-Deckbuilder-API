@@ -5,4 +5,5 @@ class Card < ApplicationRecord
   has_many :subtype, through: :cardsubtype
   has_many :cardtype
   has_many :type, through: :cardtype
+  
 end

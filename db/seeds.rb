@@ -29,15 +29,15 @@ id = 555202
 end
 p 
 p 
-user = User.new(
+user = User.create(
   name: "bob",
-  password_digest: "password",
+  password: "password",
   email: "bob@bob.com"
 )
 user.save
-user = User.new(
+user = User.create(
   name: "test",
-  password_digest: "password",
+  password: "password",
   email: "test@test.com"
 )
 user.save
