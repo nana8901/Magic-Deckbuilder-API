@@ -32,15 +32,15 @@ p
 user = User.create(
   name: "bob",
   password: "password",
+  password_confirmation: "password",
   email: "bob@bob.com"
 )
-user.save
 user = User.create(
   name: "test",
   password: "password",
+  password_confirmation: "password",
   email: "test@test.com"
 )
-user.save
 deck = Deck.new(
   name: "Bob's first deck",
   user_id: "1",
