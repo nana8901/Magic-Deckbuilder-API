@@ -7,14 +7,6 @@ class DecksController < ApplicationController
       description: "once told me",
     )
   end
-  def add_to_deck
-    # Need to add in an 'if' statement to simply increase number_in_deck if the deck already has a 'cards_in_deck' object, when not hardcoding 
-    add = cards_in_deck.new(
-      deck_id: 1,
-      card_id: 1,
-      number_in_deck: 1,
-    )
-  end
 
   def update
     deck = Deck.find_by(id: params[:id])
@@ -26,8 +18,8 @@ class DecksController < ApplicationController
   end
 
   def show
-    card = Card.find_by(id: params[:id])
-    render json: card
+    deck = Deck.find_by(id: params[:id])
+    render json: [deck, deck.card]
   end
 
   def index
