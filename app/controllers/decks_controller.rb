@@ -23,7 +23,7 @@ class DecksController < ApplicationController
   end
 
   def index
-    @decks = Deck.all
+    @decks = Deck.where(user_id: current_user.id)
     render json: @decks
     p current_user
 
