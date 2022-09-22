@@ -16,7 +16,7 @@ class CardsController < ApplicationController
     elsif CardsInDeck.find_by(card_id: newCardsParams[:card_id], deck_id: params[:deck_id]) != nil
       change = CardsInDeck.find_by(card_id: newCardsParams[:card_id], deck_id: params[:deck_id])
       change.number_in_deck = params[:number_in_deck]
-      if change[:number_in_deck] == 0
+      if change.number_in_deck == 0
         change.destroy
       else
         change.save
