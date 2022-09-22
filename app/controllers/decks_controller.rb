@@ -22,10 +22,10 @@ class DecksController < ApplicationController
   end
 
   def show
-    deck = Deck.find_by(id: params[:id])
-    numCards = deck.cards_in_deck
-    cards = deck.card
-    render json: {deck: deck, cards: cards, numCards: numCards}
+    @deck = Deck.find_by(id: params[:id])
+    @numCards = @deck.cards_in_deck
+    @cards = @deck.card
+    render template: "decks/show"
   end
 
   def index

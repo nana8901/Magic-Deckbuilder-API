@@ -1,0 +1,16 @@
+{
+  id: @deck.id,
+  name: @deck.name,
+  description: @deck.description,
+  cards: @deck.card.map do |card| 
+    {
+      name: card.name,
+      image_url: card.image_url,
+      number_in_deck: @numCards.find_by(card_id: card.id).number_in_deck
+    }
+  end
+  #   name: card.name,
+  #   image_url: card.image_url,
+  #   number: @numCards.find_by(card_id: card.id).number_in_deck,
+  # end
+}

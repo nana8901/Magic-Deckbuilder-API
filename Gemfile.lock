@@ -100,6 +100,7 @@ GEM
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
+    jb (0.8.0)
     jwt (2.5.0)
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
@@ -191,6 +192,7 @@ DEPENDENCIES
   bootsnap
   debug
   http
+  jb
   jwt
   pg (~> 1.1)
   puma (~> 5.0)

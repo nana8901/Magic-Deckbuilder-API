@@ -1,0 +1,6 @@
+@decks.map do |deck|
+  {
+    id: deck.id,
+    url: deck_url(deck, format: :json)
+  }
+end

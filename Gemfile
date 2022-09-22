@@ -16,6 +16,7 @@ gem "puma", "~> 5.0"
 # gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
 gem 'jwt'
+gem 'jb'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
