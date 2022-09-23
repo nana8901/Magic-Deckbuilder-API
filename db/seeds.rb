@@ -27,7 +27,6 @@ end
 lands = [559459, 559458, 559462, 559456, 559464]
 lands.each do |land|
   response = HTTP.get("https://api.magicthegathering.io/v1/cards/" + land.to_s).parse
-  p response
   card = Card.new(
     name: response["card"]["name"],
     rules_text: response["card"]["text"],
