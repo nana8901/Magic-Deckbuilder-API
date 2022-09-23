@@ -19,6 +19,8 @@ class DecksController < ApplicationController
   end
 
   def delete
+    deck = Deck.find_by(id: params[:id])
+    deck.destroy
   end
 
   def show
