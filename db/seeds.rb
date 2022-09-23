@@ -7,9 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "HTTP"
 id = 555202
-# 1.times do |i|
-# response = HTTP.get("https://api.magicthegathering.io/v1/cards/" + (id).to_s).parse
-# card = response.body
 261.times do |i|
   response = HTTP.get("https://api.magicthegathering.io/v1/cards/" + (id + i).to_s).parse
   card = Card.new(
@@ -27,19 +24,35 @@ id = 555202
   )
   card.save
 end
+lands = [559459, 559458, 559462, 559456, 559464]
+lands.each do |land|
+  response = HTTP.get("https://api.magicthegathering.io/v1/cards/" + land.to_s).parse
+  p response
+  card = Card.new(
+    name: response["card"]["name"],
+    rules_text: response["card"]["text"],
+    rarity: response["card"]["rarity"],
+    expansion_id: 1,
+    cmc: response["card"]["cmc"],
+    colors: response["card"]["colors"],
+    types: response["card"]["type"],
+    image_url: response["card"]["imageUrl"]
+  )
+  card.save
+end
 p 
 p 
 user = User.create(
   name: "bob",
+  email: "bob@bob.com",
   password: "password",
-  password_confirmation: "password",
-  email: "bob@bob.com"
+  password_confirmation: "password"
 )
 user = User.create(
   name: "test",
+  email: "test@test.com",
   password: "password",
   password_confirmation: "password",
-  email: "test@test.com"
 )
 deck = Deck.new(
   name: "Bob's first deck",

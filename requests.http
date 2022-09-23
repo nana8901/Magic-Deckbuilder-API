@@ -1,4 +1,4 @@
-# GET https://api.magicthegathering.io/v1/cards/555202/
+GET https://api.magicthegathering.io/v1/cards/559459/
 
 # ### Users create (signup)
 # POST http://localhost:3000/users.json
