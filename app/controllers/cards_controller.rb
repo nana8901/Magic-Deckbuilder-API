@@ -23,4 +23,9 @@ class CardsController < ApplicationController
       end
     end
   end
+  def delete
+    toDelete = CardsInDeck.find_by(id: params[:id])
+    p toDelete
+    toDelete.destroy
+  end
 end
