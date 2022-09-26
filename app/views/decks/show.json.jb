@@ -6,7 +6,8 @@
     {
       name: card.name,
       image_url: card.image_url,
-      number_in_deck: @numCards.find_by(card_id: card.id).number_in_deck
+      number_in_deck: @numCards.find_by(card_id: card.id).number_in_deck,
+      in_deck_id: @numCards.find_by(card_id: card.id).id
     }
   end
   #   name: card.name,
