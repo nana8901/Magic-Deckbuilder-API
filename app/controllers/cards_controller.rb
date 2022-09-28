@@ -28,4 +28,9 @@ class CardsController < ApplicationController
     p toDelete
     toDelete.destroy
   end
+  def update
+    toUpdate = CardsInDeck.find_by(id: params[:id])
+    toUpdate.number_in_deck = params[:number_in_deck]
+    toUpdate.save!
+  end
 end

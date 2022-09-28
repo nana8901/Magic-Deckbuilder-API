@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get "/cards/:id" => "cards#show"
   post "/sessions" => "sessions#create"
   delete "/cards/:id" => "cards#delete"
+  patch "/cards" => "cards#update"
   
 end

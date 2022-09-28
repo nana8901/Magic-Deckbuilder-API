@@ -15,7 +15,6 @@ class DecksController < ApplicationController
     deck.description = params[:description] || deck.description
     deck.save
     render json: deck
-
   end
 
   def delete
@@ -34,7 +33,6 @@ class DecksController < ApplicationController
     @decks = Deck.where(user_id: current_user.id)
     render json: @decks
     p current_user
-
   end
 
 end
