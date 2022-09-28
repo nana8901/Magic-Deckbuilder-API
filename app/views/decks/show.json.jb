@@ -7,7 +7,9 @@
       name: card.name,
       image_url: card.image_url,
       number_in_deck: @numCards.find_by(card_id: card.id).number_in_deck,
-      in_deck_id: @numCards.find_by(card_id: card.id).id
+      in_deck_id: @numCards.find_by(card_id: card.id).id,
+      card_id: card.id,
+      types: card.types
     }
   end
   #   name: card.name,
